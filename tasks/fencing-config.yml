@@ -11,7 +11,7 @@
     passwd={{ sap_hana_ha_pacemaker_node1_fencing_device.pwd }} port=={{ sap_hana_ha_pacemaker_node1_fencing_device.port }}   
     pcmk_host_list={{ sap_hana_ha_pacemaker_node1_fencing_device.pcmk_host_list }} op monitor interval=30
   register: stonith1_device
-  changed_when: "'error' not in stonith_device.stdout"
+  changed_when: "'error' not in stonith1_device.stdout"
   run_once: true
 
 - name: Create stonith device for host2
@@ -21,5 +21,5 @@
     passwd={{ sap_hana_ha_pacemaker_node2_fencing_device.pwd }} port=={{ sap_hana_ha_pacemaker_node2_fencing_device.port }}   
     pcmk_host_list={{ sap_hana_ha_pacemaker_node2_fencing_device.pcmk_host_list }} op monitor interval=30
   register: stonith2_device
-  changed_when: "'error' not in stonith_device.stdout"
+  changed_when: "'error' not in stonith2_device.stdout"
   run_once: true
